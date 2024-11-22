@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import News from './components/News';
 
 /*
 Very Important:-
@@ -11,12 +12,16 @@ Very Important:-
     Use-case - Mainly in Navbar, Footer like areas where we have mention other end-points.
 */
 
+const NEWS_API_KEY = process.env.REACT_APP_NEWS_API;
+
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navbar />}></Route>
+          <Route path='/' element={<Navbar />}>
+            <Route index element={<News apikey={NEWS_API_KEY} />}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
