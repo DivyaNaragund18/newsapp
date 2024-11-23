@@ -20,7 +20,38 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Navbar />}>
-            <Route index element={<News apikey={NEWS_API_KEY} />}></Route>
+            <Route
+              index
+              element={<News apikey={NEWS_API_KEY} category='general' />}
+            />
+            <Route
+              path='business'
+              element={<News apikey={NEWS_API_KEY} category='business' />}
+            />
+            <Route
+              path='entertainment'
+              element={<News apikey={NEWS_API_KEY} category='entertainment' />}
+            />
+            <Route
+              path='general'
+              element={<News apikey={NEWS_API_KEY} category='general' />}
+            />
+            <Route
+              path='health'
+              element={<News apikey={NEWS_API_KEY} category='health' />}
+            />
+            <Route
+              path='science'
+              element={<News apikey={NEWS_API_KEY} category='science' />}
+            />
+            <Route
+              path='sports'
+              element={<News apikey={NEWS_API_KEY} category='sports' />}
+            />
+            <Route
+              path='technology'
+              element={<News apikey={NEWS_API_KEY} category='technology' />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
