@@ -22,35 +22,63 @@ function App() {
           <Route path='/' element={<Navbar />}>
             <Route
               index
-              element={<News apikey={NEWS_API_KEY} category='general' />}
+              element={
+                <News apikey={NEWS_API_KEY} category='general' key='general' />
+              }
             />
             <Route
               path='business'
-              element={<News apikey={NEWS_API_KEY} category='business' />}
+              element={
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='business'
+                  key='business'
+                />
+              }
             />
             <Route
               path='entertainment'
-              element={<News apikey={NEWS_API_KEY} category='entertainment' />}
+              element={
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='entertainment'
+                  key='entertainment'
+                />
+              }
             />
             <Route
               path='general'
-              element={<News apikey={NEWS_API_KEY} category='general' />}
+              element={
+                <News apikey={NEWS_API_KEY} category='general' key='general' />
+              }
             />
             <Route
               path='health'
-              element={<News apikey={NEWS_API_KEY} category='health' />}
+              element={
+                <News apikey={NEWS_API_KEY} category='health' key='health' />
+              }
             />
             <Route
               path='science'
-              element={<News apikey={NEWS_API_KEY} category='science' />}
+              element={
+                <News apikey={NEWS_API_KEY} category='science' key='science' />
+              }
             />
             <Route
               path='sports'
-              element={<News apikey={NEWS_API_KEY} category='sports' />}
+              element={
+                <News apikey={NEWS_API_KEY} category='sports' key='sports' />
+              }
             />
             <Route
               path='technology'
-              element={<News apikey={NEWS_API_KEY} category='technology' />}
+              element={
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='technology'
+                  key='technology'
+                />
+              }
             />
           </Route>
         </Routes>
