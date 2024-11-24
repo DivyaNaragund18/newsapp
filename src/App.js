@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import News from './components/News';
+import LoadingBar from 'react-top-loading-bar';
+import { useState } from 'react';
 
 /*
 Very Important:-
@@ -15,15 +17,31 @@ Very Important:-
 const NEWS_API_KEY = process.env.REACT_APP_NEWS_API;
 
 function App() {
+  let country = 'us';
+  let pageSize = 8;
+  const [progress, setProgress] = useState(0);
+
+  const progressLoader = (progress) => {
+    setProgress(progress);
+  };
+
   return (
     <div className='App'>
       <BrowserRouter>
+        <LoadingBar color='#f11946' progress={progress} />
         <Routes>
           <Route path='/' element={<Navbar />}>
             <Route
               index
               element={
-                <News apikey={NEWS_API_KEY} category='general' key='general' />
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='general'
+                  key='general'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
+                />
               }
             />
             <Route
@@ -33,6 +51,9 @@ function App() {
                   apikey={NEWS_API_KEY}
                   category='business'
                   key='business'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
                 />
               }
             />
@@ -43,31 +64,62 @@ function App() {
                   apikey={NEWS_API_KEY}
                   category='entertainment'
                   key='entertainment'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
                 />
               }
             />
             <Route
               path='general'
               element={
-                <News apikey={NEWS_API_KEY} category='general' key='general' />
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='general'
+                  key='general'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
+                />
               }
             />
             <Route
               path='health'
               element={
-                <News apikey={NEWS_API_KEY} category='health' key='health' />
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='health'
+                  key='health'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
+                />
               }
             />
             <Route
               path='science'
               element={
-                <News apikey={NEWS_API_KEY} category='science' key='science' />
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='science'
+                  key='science'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
+                />
               }
             />
             <Route
               path='sports'
               element={
-                <News apikey={NEWS_API_KEY} category='sports' key='sports' />
+                <News
+                  apikey={NEWS_API_KEY}
+                  category='sports'
+                  key='sports'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
+                />
               }
             />
             <Route
@@ -77,6 +129,9 @@ function App() {
                   apikey={NEWS_API_KEY}
                   category='technology'
                   key='technology'
+                  country={country}
+                  pageSize={pageSize}
+                  progressLoader={progressLoader}
                 />
               }
             />
